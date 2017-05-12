@@ -1,0 +1,106 @@
+// ======
+// Navbar
+// ======
+
+@navbar-height: 80px;
+@navbar-margin-bottom: 0;
+
+@navbar-default-bg: transparent;
+@navbar-default-color: @text-white-color;
+@navbar-default-link-color: @text-white-color;
+@navbar-default-link-hover-color: @brand-primary;
+@navbar-default-link-active-color: @brand-primary;
+@navbar-default-link-active-bg: transparent;
+@navbar-default-brand-color: @text-white-color;
+@navbar-default-brand-hover-color: @text-white-color;
+@navbar-default-toggle-hover-bg: transparent;
+@navbar-default-toggle-icon-bar-bg: @text-white-color;
+@navbar-default-toggle-border-color: transparent;
+
+@navbar-inverse-bg: fade(black,75%);
+@navbar-inverse-color: @text-white-color;
+@navbar-inverse-link-color: @text-white-color;
+@navbar-inverse-link-hover-color: @brand-primary;
+@navbar-inverse-link-active-color: @brand-primary;
+@navbar-inverse-link-active-bg: transparent;
+@navbar-inverse-brand-color: @text-white-color;
+@navbar-inverse-brand-hover-color: @text-white-color;
+@navbar-inverse-toggle-hover-bg: transparent;
+@navbar-inverse-toggle-icon-bar-bg: @text-white-color;
+@navbar-inverse-toggle-border-color: transparent;
+
+
+.navbar {
+	padding-top: 20px;
+	padding-bottom: 20px;
+    border: 0;
+    transition: padding-top .25s, padding-bottom .25s, background-color .25s;
+
+    // Inverse 
+
+    &-inverse {
+    	padding-top: 0;
+    	padding-bottom: 0;
+
+	    // Collapse
+
+	    .navbar-collapse {
+
+	    	@media(max-width: @screen-xs-max) {
+	    	 	border-color: transparent;   
+	    	}
+	    }
+    }
+
+    // Fixed top
+
+    &-fixed-top {
+    	padding-right: inherit;
+    }
+	
+	// Links
+
+	&-nav {
+
+		> li {
+
+			> a {
+				position: relative;
+				font-size: @font-size-small;
+				font-family: @headings-font-family;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				transition: color .25s;
+
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0; right: 0; bottom: 0;
+					border-top: 2px solid @brand-primary;
+					transform-origin: center;
+					transform: scale(0,1);
+					transition: all .25s;				
+				}
+
+				&:hover, &:active, &:focus {
+
+					&:before {
+
+						@media(min-width: @grid-float-breakpoint) {
+							transform: scale(1);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Brand
+
+	&-brand {
+		font-family: @headings-font-family;
+		font-size: 18px;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+	}
+}

@@ -1,0 +1,62 @@
+// =======
+// Pricing
+// =======
+
+.section_pricing {
+
+	.pricing__item {
+		margin-bottom: 25px;
+		padding: 30px;
+		background-color: white;
+		border: 1px solid @border-color;
+		text-align: center;
+		transition: all .25s;
+		
+		@media(min-width: @screen-lg-min) {
+			padding: 50px;
+		}
+
+		// Heading
+
+		&__heading {
+			margin-bottom: 25px;
+		}
+
+		// Price
+
+		&__price {
+			margin-bottom: 25px;
+			line-height: 1;
+			font-size: 3em;
+			font-weight: 300;
+			color: @brand-primary;
+
+			> small {
+				vertical-align: baseline;
+				font-size: @font-size-base;
+			}
+		}
+
+		// Features
+
+		&__features {
+			list-style: none;
+			padding: 25px 0 0;
+			margin-bottom: 25px;
+			border-top: 1px solid @border-color;
+
+			> li {
+				
+				+ li {
+					margin-top: 15px;
+				}
+			}
+		}
+
+		// Hover
+
+		&:hover {
+			box-shadow: 0 10px 100px 0 fade(black,14%);
+		}
+	}
+}

@@ -1,0 +1,53 @@
+// ========
+// Carousel
+// ========
+
+.carousel {
+
+	// Indicators
+
+	&-indicators {
+
+		> li {
+			.square(12px);
+			margin: 0;
+			background-color: fade(white,50%);
+			border: 0;
+
+			&.active {
+				margin: 0;
+				background-color: @brand-primary;
+			}
+		}
+	}
+
+	// Controls
+
+	&-control {
+
+		&.left, &.right {
+			width: 5%;
+			background: none;
+			opacity: 1;
+
+			> span {
+				position: absolute;
+				top: 50%; left: 50%;
+				font-size: 1.5em;
+				text-shadow: none;
+				color: fade(white,50%);
+				transform: translate(-50%);
+			}
+			&:hover {
+
+				> span {
+					color: @brand-primary;
+				}
+			}
+
+			@media(max-width: @screen-xs-max) {
+			 	width: 15%;   
+			}
+		}
+	}
+}

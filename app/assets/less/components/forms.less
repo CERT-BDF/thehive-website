@@ -1,0 +1,46 @@
+// =====
+// Forms
+// =====
+
+@input-border: @border-color;
+
+form {
+
+	// Label
+
+	label {
+		font-family: @headings-font-family;
+		font-weight: 400;
+		font-size: @font-size-smaller;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		color: @text-color;
+	}
+	
+	// Form control
+
+	.form-control {
+		box-shadow: none !important;
+
+		&:focus {
+			border-color: @brand-primary;
+			box-shadow: none !important;
+		}
+	}
+	.has-error {
+
+		.form-control {
+			border-color: red;
+		}
+		.help-block {
+			color: red;
+		}
+	}
+
+	// Help block
+	
+	.help-block {
+		font-size: @font-size-small;
+	}
+
+}

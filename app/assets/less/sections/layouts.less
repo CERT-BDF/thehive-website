@@ -1,0 +1,52 @@
+// =======
+// Layouts
+// =======
+
+.section_layouts {
+
+	// Item
+
+	.layouts__item {
+		display: block;
+		margin-bottom: 30px;
+		color: @text-color;
+		transition: all .25s;
+
+		&:hover, &:active, &:focus {
+			text-decoration: none;
+		}
+
+		// Image
+
+		&__img {
+			position: relative;
+			text-align: center;
+		}
+
+		// Footer
+
+		&__footer {
+			padding: 30px;
+			background-color: white;
+			border: 1px solid @border-color;
+			border-top: 0;
+			
+			// Heading
+
+			&__heading {
+				margin: 0;
+				text-align: center;
+				color: @headings-color;
+				letter-spacing: .05em;
+			}
+		}
+	}
+
+	// Footer 
+
+	+ .section_footer {
+		background-color: white;
+		color: @text-color;
+	}
+
+}

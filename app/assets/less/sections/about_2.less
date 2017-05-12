@@ -1,0 +1,50 @@
+// =======
+// About 2
+// =======
+
+.section_about_2 {
+	position: relative;
+	
+	// Features
+
+	.features__item {
+		margin-bottom: 25px;
+		
+		&__icon {
+			margin-bottom: 15px;
+			font-size: 2.5em;
+			color: @brand-primary;
+		}
+		&__heading {
+			margin-bottom: 15px;
+		}
+	}
+
+	// Image
+	
+	.about_2 {
+
+		&__image {
+			
+			@media(max-width: @screen-sm-max) {
+				padding: 25px 10px 0 10px;
+
+				> img {
+					.img-responsive();
+				}
+			}
+			@media(min-width: @screen-md-min) {
+				display: flex;
+				position: absolute;
+				top: @section-padding-base; bottom: @section-padding-base; 
+				left: 66.666%; right: 0;
+				overflow: hidden;
+
+				> img {
+					height: 100%; width: auto;
+				}
+			}
+		}
+
+	}
+}

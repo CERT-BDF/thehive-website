@@ -1,0 +1,64 @@
+// =======
+// Buttons
+// =======
+
+.btn {
+	border-color: transparent;
+	font-family: @headings-font-family;
+	font-size: @font-size-smaller;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	transition: all .25s;
+
+	&:focus, &:active, &:focus:active {
+		box-shadow: none;
+	}
+}
+
+// Contextual classes
+
+.btn-default {
+	border-color: @border-color;
+	font-weight: 500;
+
+	&:hover {
+		border-color: transparent;
+		background-color: @brand-accent;
+		font-weight: 400;
+		color: white;
+	}
+	&:focus, &:active, &:focus:active {
+		border-color: transparent;
+		background-color: @brand-accent;
+		box-shadow: none;
+		font-weight: 400;
+		color: white;
+	}
+}
+.btn-primary {
+
+	&:hover {
+		border-color: transparent;
+		background-color: @brand-accent;
+	}
+	&:focus, &:active, &:focus:active {
+		border-color: transparent;
+		background-color: @brand-accent;
+	}
+}
+.btn-link {
+	border-color: @link-color;
+
+	&:hover {
+		border-color: white;
+		background-color: transparent;
+		color: white;
+		text-decoration: none;
+	}
+	&:focus, &:active, &:focus:active {
+		border-color: white;
+		background-color: transparent;
+		color: white;
+		text-decoration: none;
+	}
+}

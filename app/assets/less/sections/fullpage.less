@@ -1,0 +1,85 @@
+// ========
+// Fullpage
+// ========
+
+// This file contains "fullpage" specific styles required
+// for the index_fading.html page look.
+
+#fullpage {
+
+    // Background carousel
+
+    &__carousel {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-color: fade(black,50%);
+        }
+    }
+
+    // Scaffolding
+
+    [class*="section_"] {
+        border-top: 0;
+
+        &.section_alt {
+            background-color: transparent;
+        }
+    }
+    
+    // Banner
+
+    .section_banner {
+
+        .container {
+
+            .row {
+                height: auto;
+            }
+        }
+    }
+
+    // Portfolio
+
+    .section_portfolio {
+
+        .portfolio {
+
+            &__item {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    // Contact
+
+    .section_contact {
+        background: none;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    // Body
+
+    &__body {
+
+        .sidebar__parallax {
+            cursor: not-allowed;
+            opacity: .35;
+
+            &:hover, &:active, &:focus {
+                background-color: white;
+                border-color: @border-color;
+                color: @headings-color;
+                outline: none;
+            }
+        }   
+    }
+
+}

@@ -1,0 +1,75 @@
+// =========
+// Preloader
+// =========
+
+.preloader,
+.preloader__spinner {
+    top: 0; right: 0; bottom: 0; left: 0;
+}
+.preloader {
+    position: fixed;
+    background: fade(white,90%);
+    overflow: hidden;
+    z-index: 999998;
+    transition: opacity .5s;
+    transition-delay: 2s;
+
+    // Spinner
+
+    &__spinner {
+      position: absolute;
+      margin: auto;
+      z-index: 999999;
+      transition: opacity .5s;
+      animation: spinnerAnimation 1s ease-in-out infinite;
+    }
+
+    @keyframes spinnerAnimation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    // Shutters
+
+    &::before, &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 200%; height: 50%;
+        left: -50%;
+        background: @brand-accent;
+        transition: all 1s ease-in;
+        transition-delay: 1s;
+    }
+    &:before {
+        top: 0;
+        transform-origin: right top;
+    }
+    &:after {
+        bottom: 0;
+        transform-origin: left bottom;
+    }
+    
+    // Remove preloader
+
+    &.active {
+        opacity: 0;
+
+        // Spinner
+        
+        .preloader__spinner {
+            animation-play-state: paused;
+            opacity: 0;
+        }
+
+        // Shutters
+
+        &:before, &:after {
+            transform: scaleY(0) rotate(25deg);
+        }
+    }
+}

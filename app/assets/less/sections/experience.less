@@ -1,0 +1,82 @@
+// ==========
+// Experience
+// ==========
+
+.section_experience {
+	
+	// Skills
+
+	.skills__item {
+
+		@media(max-width: @screen-xs-max) {
+		 	
+		 	&:first-child {
+		 		margin-top: 25px;
+		 	}   
+		}
+
+		// Heading
+
+		&__heading {
+			display: flex;
+			align-items: center;
+
+			> small {
+				margin-left: auto;
+			}
+		}
+	}
+
+	// Timeline
+
+	.experience__timeline {
+		position: relative;
+		padding-left: 0;
+		list-style: none;
+		
+		> li {
+			display: flex;
+			flex-direction: column;
+			padding: 30px;
+			border: 1px solid @border-color;
+
+			@media(min-width: @screen-sm-min) {
+				flex-direction: row;
+				align-items: center;
+			 	padding: 40px; 
+			}
+			
+			+ li {
+				margin-top: 25px;
+			}
+		}
+
+		// Logo
+
+		&__logo {
+			min-width: 90px;
+			padding-right: 40px;
+			font-size: 4em;
+			color: @text-muted;
+
+			@media(min-width: @screen-sm-min) {
+				text-align: center;
+			}
+		}
+
+		// Heading
+
+		&__heading {
+			margin-bottom: 0;
+		}
+
+		// Position
+
+		&__position {
+			margin-bottom: 10px;
+			font-size: @font-size-small;
+			font-style: italic;
+			color: @text-muted;
+		}
+	}
+}

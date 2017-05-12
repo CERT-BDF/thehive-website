@@ -1,0 +1,33 @@
+// =====
+// About
+// =====
+
+.section_about {
+	
+	.about {
+
+		// Images
+
+		&__img {
+
+			@media(max-width: @screen-xs-max) {
+				margin-top: 25px;    
+			}
+			
+			// iPhone image
+
+			&_iphone {
+				max-width: 250px;
+			}
+		}
+	}
+
+	// Rows
+
+	.row_centered {
+
+		+ .row_centered {
+			margin-top: @section-padding-base / 2;
+		}
+	}
+}

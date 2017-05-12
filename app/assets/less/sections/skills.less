@@ -1,0 +1,27 @@
+// ======
+// Skills
+// ======
+
+.section_skills {
+	
+	.skills__item {
+
+		@media(max-width: @screen-xs-max) {
+		 	
+		 	&:first-child {
+		 		margin-top: 25px;
+		 	}   
+		}
+
+		// Heading
+
+		&__heading {
+			display: flex;
+			align-items: center;
+
+			> small {
+				margin-left: auto;
+			}
+		}
+	}
+}

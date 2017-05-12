@@ -1,0 +1,134 @@
+// ==========
+// Animations
+// ==========
+
+
+// Animation settings
+
+@animation-duration: 1s;
+@animation-transition: ease;
+@animation-transition-alt: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+[class*="animate-"] {
+	opacity: 0;
+	animation-fill-mode: forwards;
+	animation-duration: @animation-duration;
+	animation-timing-function: @animation-transition;
+}
+[data-animate] {
+	opacity: 0;
+}
+
+
+// Animation delays
+
+@animation-delays: 10;
+@animation-delay-step: .25; // delay in seconds
+
+.animation-delays-loop (@i) when (@i > 0) {
+	.animate-xs-step-@{i} {
+		@animation-delay: @i * @animation-delay-step;
+
+		@media(min-width: 0) {
+			animation-delay: ~"@{animation-delay}s";
+		}
+	}
+	.animate-sm-step-@{i} {
+		@animation-delay: @i * @animation-delay-step;
+
+		@media(min-width: @screen-sm-min) {
+			animation-delay: ~"@{animation-delay}s";
+		}
+	}
+	.animate-md-step-@{i} {
+		@animation-delay: @i * @animation-delay-step;
+
+		@media(min-width: @screen-md-min) {
+			animation-delay: ~"@{animation-delay}s";
+		}
+	}
+	.animate-lg-step-@{i} {
+		@animation-delay: @i * @animation-delay-step;
+
+		@media(min-width: @screen-lg-min) {
+			animation-delay: ~"@{animation-delay}s";
+		}
+	}
+	.animation-delays-loop(@i - 1);
+}
+.animation-delays-loop (@animation-delays);
+
+
+// Animate: Down
+
+.animate-down {
+	animation-name: animateDown;
+}
+
+@keyframes animateDown {
+	from {
+		opacity: 0;
+		transform: translateY(-5vh);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+// Animate: Up
+
+.animate-up {
+	animation-name: animateUp;
+}
+
+@keyframes animateUp {
+	from {
+		opacity: 0;
+		transform: translateY(5vh);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+// Animate: Left
+
+.animate-left {
+	animation-name: animateLeft;
+}
+
+@keyframes animateLeft {
+	from {
+		opacity: 0;
+		transform: translateX(5vh);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+
+// Animate: Progress
+
+.animate-progress {
+	animation-name: animateProgress;
+	animation-timing-function: @animation-transition;
+	transform-origin: left center;
+	opacity: 1;
+}
+
+@keyframes animateProgress {
+	from {
+		opacity: 1;
+		transform: scaleX(0);
+	}
+	to {
+		opacity: 1;
+		transform: scaleX(1);
+	}
+}

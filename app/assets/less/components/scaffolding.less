@@ -1,0 +1,42 @@
+// ===========
+// Scaffolding
+// ===========
+
+body {
+	position: relative;
+}
+
+// Sections
+
+@section-padding-base: 100px;
+
+[class*="section_"] {
+	position: relative;
+	padding-top: @section-padding-base;
+	padding-bottom: @section-padding-base;
+
+	+ [class*="section_"] {
+		border-top: 1px solid @border-color;
+	}
+
+	// Alternatives
+
+	&.section_alt {
+		background-color: #f5f5f5;
+	}
+}
+
+// Rows
+
+.row {
+
+	// Centered
+
+	&_centered {
+
+		@media(min-width: @screen-sm-min) {
+			display: flex;
+			align-items: center;
+		}
+	}
+}

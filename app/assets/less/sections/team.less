@@ -1,0 +1,34 @@
+// ====
+// Team
+// ====
+
+.section_team {
+	
+	.team__item {
+		margin-bottom: 25px;
+
+		// Footer
+
+		&__footer {
+			padding: 30px;
+			background-color: white;
+			border: 1px solid @border-color;
+			border-top: 0;
+
+			@media(min-width: @screen-lg-min) {
+				padding: 40px;
+			}
+			
+			// Heading
+
+			&__heading {
+				color: @brand-primary;
+
+				> small {
+					font-size: @font-size-base;
+					color: @headings-color;
+				}
+			}
+		}
+	}
+}

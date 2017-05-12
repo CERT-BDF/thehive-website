@@ -1,0 +1,89 @@
+// =========
+// Portfolio
+// =========
+
+.section_portfolio {
+	padding-top: 0;
+	padding-bottom: 0;
+	border-top: 0 !important;
+
+	+ [class*="section_"] {
+		border-top: 0;
+	}
+
+	// Container
+
+	.container-fluid {
+
+		.row {
+			padding-left: 2.5px;
+			padding-right: 2.5px;
+
+			[class*="col-"] {
+				padding-left: 2.5px;
+				padding-right: 2.5px;
+			}
+		}
+	}
+	
+	// Item
+
+	.portfolio__item {
+		position: relative;
+		margin-bottom: 5px;
+		
+		&__img {
+			overflow: hidden;
+			
+			> img {
+				transition: all 1s @animation-transition;
+			}
+			&__mask {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				position: absolute;
+				top: 0; right: 0; bottom: 0; left: 0;
+				padding: 15px;
+				background-color: fade(black,50%);
+				opacity: 0;
+				transform: scale(0);
+				transition: opacity 1s @animation-transition;
+				
+				> * {
+					transform: translateY(100%);
+					opacity: 0;
+					transition: all .5s @animation-transition;
+				}
+				> h3 {
+					margin-bottom: 1em;
+					color: @text-white-color;
+					transform: translateY(-100%);
+				}
+			}
+
+			&:hover {
+
+				> img {
+					transform: scale(1.1);
+				}
+				.portfolio__item__img__mask {
+					transform: scale(1);
+					opacity: 1;	
+
+					> * {
+						transform: translateY(0);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+// Modal
+
+#modal_portfolio__img {
+	margin-bottom: 25px;
+}
